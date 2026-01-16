@@ -22,6 +22,8 @@ fn main() {
 
     for entry in WalkDir::new(path).into_iter().filter_map(Result::ok) {
         let p = entry.path();
-        println!("{}", p.display());
+        if verbose {
+            println!("{}", p.display());
+        }
     }
 }
